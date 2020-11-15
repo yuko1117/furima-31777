@@ -22,14 +22,14 @@
 
 ## addresses テーブル
 
-| Column       | Type       | options     |
-| ------------ | ---------- | ----------- |
-| post_code    | string     | null: false |
-| prefecture   | string     | null: false |
-| city         | string     | null: false |
-| address      | string     | null: false |
-|building_name |string      |             |
-|phone_number  | string     | null: false |
+| Column        | Type       | options     |
+| ------------- | ---------- | ----------- |
+| post_code     | string     | null: false |
+| prefecture_id | integer    | null: false |
+| city          | string     | null: false |
+| address       | string     | null: false |
+|building_name  |string      |             |
+|phone_number   | string     | null: false |
 
 ### Association
 
@@ -48,6 +48,7 @@
 | days_until_shipping_id | integer        | null: false      |
 | selling_price          | integer        | null: false      |
 | user                   | references     | foreign_key: true|
+| purchase               | references     | foreign_key: true|
 
 ### Association
 
@@ -72,11 +73,13 @@
 
 ## purchases テーブル
 
-| Column | Type       | options|
-| ------ | ---------- | ----------------- |
-| item   | references | foreign_key: true |  
-| user   | references | foreign_key: true |
+| Column  | Type       | options|
+| ------- | ---------- | ----------------- |
+| item    | references | foreign_key: true |  
+| user    | references | foreign_key: true |
+| address | references | foreign_key: true |
 
 ### Association
 - belongs_to :item
 - belongs_to :user
+- has_one :address
