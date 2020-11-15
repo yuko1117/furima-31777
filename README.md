@@ -30,6 +30,7 @@
 | address       | string     | null: false |
 |building_name  |string      |             |
 |phone_number   | string     | null: false |
+| purchase      | references | foreign_key: true|
 
 ### Association
 
@@ -48,7 +49,7 @@
 | days_until_shipping_id | integer        | null: false      |
 | selling_price          | integer        | null: false      |
 | user                   | references     | foreign_key: true|
-| purchase               | references     | foreign_key: true|
+
 
 ### Association
 
@@ -77,7 +78,6 @@
 | ------- | ---------- | ----------------- |
 | item    | references | foreign_key: true |  
 | user    | references | foreign_key: true |
-| address | references | foreign_key: true |
 
 ### Association
 - belongs_to :item
