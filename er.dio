@@ -1,6 +1,6 @@
-<mxfile host="65bd71144e" modified="2020-11-15T06:00:18.949Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.50.1 Chrome/83.0.4103.122 Electron/9.2.1 Safari/537.36" etag="u1eSmuaCp9ROVtJvIO-V" version="13.6.5">
+<mxfile host="65bd71144e" modified="2020-11-15T07:19:16.454Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.50.1 Chrome/83.0.4103.122 Electron/9.2.1 Safari/537.36" etag="v9oFDmOZd__1mWX1VBch" version="13.6.5">
     <diagram id="TFbjJtptHaoXQfsU_HTK" name="ページ1">
-        <mxGraphModel dx="646" dy="616" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+        <mxGraphModel dx="377" dy="359" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -19,7 +19,7 @@
                 <mxCell id="18" value="items(商品)" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" parent="1" vertex="1">
                     <mxGeometry x="760" y="330" width="390" height="190" as="geometry"/>
                 </mxCell>
-                <mxCell id="19" value="・item_name                          string  null:false&#10;・item_explanation                text  null:false&#10;・category_id                         integer  null:false  &#10;・item_status_id                     integer  null:false&#10;・delivery_fee_id                    integer  null:false&#10;・shipping_area_id                 integer  null:false&#10;・days_until_shipping_id        integer  null:false&#10;・selling_price                        integer  null:false&#10;・image                                  ActivessStorage&#10;・user_id                                refarences  null:false  foreign_key:true" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" parent="18" vertex="1">
+                <mxCell id="19" value="・name                          string  null:false&#10;・explanation                text  null:false&#10;・category_id                         integer  null:false  &#10;・status_id                     integer  null:false&#10;・delivery_fee_id                    integer  null:false&#10;・shipping_area_id                 integer  null:false&#10;・days_until_shipping_id        integer  null:false&#10;・selling_price                        integer  null:false&#10;・user_id                                refarences  null:false  foreign_key:true" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" parent="18" vertex="1">
                     <mxGeometry y="30" width="390" height="160" as="geometry"/>
                 </mxCell>
                 <mxCell id="28" value="" style="endArrow=none;html=1;entryX=0.398;entryY=-0.003;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.402;exitY=1.015;exitDx=0;exitDy=0;exitPerimeter=0;" parent="18" edge="1" target="19" source="19">
@@ -76,7 +76,7 @@
                         <mxRectangle x="80" y="120" width="70" height="30" as="alternateBounds"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="3" value="・nickname                          string  null:false  &#10;・email                                 string  null:false  unique:true&#10;・password                          string  null:false &#10;・encrypted_password        string  null:false     &#10;・first＿name                       string  null:false &#10;・last _name                        string  null:false&#10;・first _name_katakana       string  null:false&#10;・last _name_katakana       string  null:false&#10;・birth_date                         date    null:false &#10;&#10;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" parent="2" vertex="1">
+                <mxCell id="3" value="・nickname                          string  null:false  &#10;・email                                 string  null:false  unique:true &#10;・encrypted_password        string  null:false     &#10;・first＿name                       string  null:false &#10;・last _name                        string  null:false&#10;・first _name_katakana       string  null:false&#10;・last _name_katakana       string  null:false&#10;・birth_date                         date    null:false &#10;&#10;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" parent="2" vertex="1">
                     <mxGeometry y="30" width="340" height="140" as="geometry"/>
                 </mxCell>
                 <mxCell id="4" value="" style="endArrow=none;html=1;rounded=0;exitX=0.441;exitY=0.212;exitDx=0;exitDy=0;exitPerimeter=0;" parent="2" source="2" edge="1">

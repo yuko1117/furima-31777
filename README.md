@@ -6,12 +6,11 @@
 | ------------------- | ------ | ------------------------ |
 | nickname            | string | null: false              |
 | email               | string | null: false unique: true |
-| password            | string | null: false              |
 | encrypted_password  | string | null: false              |
 | first_name          | string | null: false              |
-| last_name           | text   | null: false              |
-| first_name_katakana | text   | null: false              |
-| last_name_katakana  | text   | null: false              |
+| last_name           | string | null: false              |
+| first_name_katakana | string | null: false              |
+| last_name_katakana  | string | null: false              |
 | birth_date          | date   | null: false              |
 
 
@@ -34,41 +33,37 @@
 
 ### Association
 
-- belongs_to :user
-
-
-
+- belongs_to :purchase
 
 ## items テーブル
 
-| Column                 | Type           | options     |
-| ---------------------- | -------------- | ----------- |
-| item_name              | string         | null: false |
-| item_explanation       | text           | null: false |
-| category_id            | references     | null: false |
-| item_status_id         | integer        | null: false |
-| delivery_fee_id        | integer        | null: false |
-| shipping_area_id       | integer        | null: false |
-| days_until_shipping_id | integer        | null: false |
-| selling_price          | integer        | null: false |
-| image                  | ActivesStorage |             |
-| user                   | references     |             |
+| Column                 | Type           | options          |
+| ---------------------- | -------------- | ---------------- |
+| name                   | string         | null: false      |
+| explanation            | text           | null: false      |
+| category_id            | references     | null: false      |
+| status_id              | integer        | null: false      |
+| delivery_fee_id        | integer        | null: false      |
+| shipping_area_id       | integer        | null: false      |
+| days_until_shipping_id | integer        | null: false      |
+| selling_price          | integer        | null: false      |
+| user                   | references     | foreign_key: true|
 
 ### Association
 
 - has_many : comments 
 - belongs_to :user
-- has_one : purchases
+- has_one : purchase
 
 
 
 ## comments テーブル
 
 | Column | Type       | options     |
-| ------ | ---------- | ----------- |
-| text   | text       | null: false |
-| user   | references |             |
-| item   | references |             |
+| ------ | ---------- | ----------------- |
+| text   | text       | null: false       |
+| user   | references | foreign_key: true |
+| item   | references | foreign_key: true |
 
 ### Association
 
@@ -78,9 +73,9 @@
 ## purchases テーブル
 
 | Column | Type       | options|
-| ------ | ---------- | ------ |
-| item   | references |        |  
-| user   | references |        |
+| ------ | ---------- | ----------------- |
+| item   | references | foreign_key: true |  
+| user   | references | foreign_key: true |
 
 ### Association
 - belongs_to :item
