@@ -22,14 +22,14 @@
 
 ## addresses テーブル
 
-| Column        | Type       | options     |
-| ------------- | ---------- | ----------- |
-| post_code     | string     | null: false |
-| prefecture_id | integer    | null: false |
-| city          | string     | null: false |
-| address       | string     | null: false |
-|building_name  |string      |             |
-|phone_number   | string     | null: false |
+| Column        | Type       | options          |
+| ------------- | ---------- | ---------------- |
+| post_code     | string     | null: false      |
+| prefecture_id | integer    | null: false      |
+| city          | string     | null: false      |
+| address       | string     | null: false      |
+|building_name  |string      |                  |
+|phone_number   | string     | null: false      |
 | purchase      | references | foreign_key: true|
 
 ### Association
@@ -42,7 +42,7 @@
 | ---------------------- | -------------- | ---------------- |
 | name                   | string         | null: false      |
 | explanation            | text           | null: false      |
-| category_id            | references     | null: false      |
+| category_id            | integer        | null: false      |
 | status_id              | integer        | null: false      |
 | delivery_fee_id        | integer        | null: false      |
 | shipping_area_id       | integer        | null: false      |
