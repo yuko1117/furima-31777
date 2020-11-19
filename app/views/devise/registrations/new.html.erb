@@ -12,7 +12,7 @@
 
   <%# インスタンスを渡して、エラー発生時にメッセージが表示されるようにしましょう。%>
  <%= form_for(@user) do |f| %>
-  <% render 'shared/error_messages', model: f.object %> 
+  <%= render 'shared/error_messages', model: f.object %> 
  <% end %>
   <%# //インスタンスを渡して、エラー発生時にメッセージが表示されるようにしましょう。%>
 
