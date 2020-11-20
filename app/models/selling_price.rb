@@ -1,2 +1,0 @@
-class SellingPrice < ApplicationRecord
-end
