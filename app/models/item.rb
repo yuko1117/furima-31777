@@ -13,11 +13,11 @@ class Item < ApplicationRecord
     validates :image
     validates :name
     validates :explanation
-    validates :category_id, numericality: { other_than: 1 }
-    validates :status_id, numericality: { other_than: 1 }
-    validates :delivery_fee_id, numericality: { other_than: 1 }
-    validates :shipping_area_id, numericality: { other_than: 1 }
-    validates :days_until_shipping_id, numericality: { other_than: 1 }
-    validates :selling_price, presence: true
+    validates :category_id, numericality: { other_than: 1, message:'Select'}
+    validates :status_id, numericality: { other_than: 1, message:'Select'}
+    validates :delivery_fee_id, numericality: { other_than: 1, message:'Select'}
+    validates :shipping_area_id, numericality: { other_than: 1, message:'Select'}
+    validates :days_until_shipping_id, numericality: { other_than: 1, message:'Select'}
+    validates :selling_price, format: { with:/\A[0-9]+\z/, message:'Half-width number'},numericality: {greater_than: 300, less_than:9999999,  message:'Out of setting range'}
   end  
 end
