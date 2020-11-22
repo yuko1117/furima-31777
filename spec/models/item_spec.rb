@@ -28,8 +28,18 @@ RSpec.describe Item, type: :model do
         @item.valid?
         expect(@item.errors.full_messages).to include("Category Select")
       end
+      it 'カテゴリーが(---)だと登録できない'do
+        @item.category_id = 1
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Category Select")
+      end
       it '商品の選択がないと登録できない'do
         @item.status_id = ''
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Status Select")
+      end
+      it '商品の選択が(---)だと登録できない'do
+        @item.status_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("Status Select")
       end
@@ -38,13 +48,28 @@ RSpec.describe Item, type: :model do
         @item.valid?
         expect(@item.errors.full_messages).to include("Delivery fee Select")
       end
+      it '配送料の選択が(---)だと登録できない'do
+        @item.delivery_fee_id = 1
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Delivery fee Select")
+      end
       it '配送元の地域の選択がないと登録できない'do
         @item.shipping_area_id = ''
         @item.valid?
         expect(@item.errors.full_messages).to include("Shipping area Select")
       end
+      it '配送元の地域の選択が(---)だと登録できない'do
+        @item.shipping_area_id = 1
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Shipping area Select")
+      end
       it '発送までの日数の選択がないと登録できない'do
         @item.days_until_shipping_id = ''
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Days until shipping Select")
+      end  
+      it '発送までの日数の選択が(---)だと登録できない'do
+        @item.days_until_shipping_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("Days until shipping Select")
       end  
@@ -54,12 +79,12 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include("Selling price can't be blank")
       end
       it '価格は￥300以上でないと登録できない'do
-        @item.selling_price = '299'
+        @item.selling_price = 299
         @item.valid?
         expect(@item.errors.full_messages).to include("Selling price Out of setting range")
       end
       it '価格は￥9,999,999をで超えると登録できない'do
-        @item.selling_price = '100000000'
+        @item.selling_price = 100000000
         @item.valid?
         expect(@item.errors.full_messages).to include("Selling price Out of setting range")
       end
@@ -72,6 +97,7 @@ RSpec.describe Item, type: :model do
         @item.image = nil
         @item.valid?
         expect(@item.errors.full_messages).to include("Image can't be blank")
+      
       end
     end
   end

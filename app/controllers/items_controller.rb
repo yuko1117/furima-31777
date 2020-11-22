@@ -6,7 +6,6 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
-    @users = User.new
   end
 
   def create
