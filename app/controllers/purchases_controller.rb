@@ -1,7 +1,7 @@
 class PurchasesController < ApplicationController
   before_action :authenticate_user!, only: [:index]
   before_action :set_item, only: [:index, :create]
-  before_action :move_to_purchase, only: [:index ]
+  before_action :move_to_purchase, only: [:index, :create]
 
   def index
     @item_purchase = ItemPurchase.new
@@ -11,6 +11,7 @@ class PurchasesController < ApplicationController
   end
 
   def create
+
     @item_purchase = ItemPurchase.new(purchase_params)
     if @item_purchase.valid?
        pay_item
