@@ -25,7 +25,7 @@ class PurchasesController < ApplicationController
   private
 
   def purchase_params
-    params.require(:item_purchase).permit(:post_code, :shipping_area_id, :city, :address, :building_name, :phone_number, :purchase_id ).merge(token: params[:token], user_id: current_user.id, item_id: @item.id)
+    params.require(:item_purchase).permit(:post_code, :shipping_area_id, :city, :address, :building_name, :phone_number).merge(token: params[:token], user_id: current_user.id, item_id: @item.id)
   end
 
   def set_item
@@ -33,7 +33,6 @@ class PurchasesController < ApplicationController
   end
 
   def move_to_purchase
-    @item = Item.find(params[:item_id])
     if current_user == @item.user 
        redirect_to root_path
     end
